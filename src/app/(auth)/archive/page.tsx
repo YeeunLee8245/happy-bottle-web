@@ -1,9 +1,7 @@
 import React from 'react'
 
-function ArchivePage() {
-  return (
+const ArchivePage = () => (
     <div>ArchivePage</div>
   )
-}
 
 export default ArchivePage;

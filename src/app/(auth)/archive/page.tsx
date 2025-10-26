@@ -1,7 +1,5 @@
-import React from 'react'
+import React from 'react';
 
-const ArchivePage = () => (
-    <div>ArchivePage</div>
-  )
+const ArchivePage = () => <div>ArchivePage</div>;
 
 export default ArchivePage;

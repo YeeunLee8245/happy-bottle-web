@@ -1,7 +1,5 @@
-import React from 'react'
+import React from 'react';
 
-const InboxPage = () => (
-    <div>InboxPage</div>
-  )
+const InboxPage = () => <div>InboxPage</div>;
 
 export default InboxPage;

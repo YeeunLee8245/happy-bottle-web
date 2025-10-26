@@ -1,6 +1,3 @@
-
 export default function UnAuthLayout() {
-  return (
-    <div>UnAuthLayout</div>
-  )
+  return <div>UnAuthLayout</div>;
 }

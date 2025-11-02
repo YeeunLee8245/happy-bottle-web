@@ -1,15 +1,10 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Single_Day } from 'next/font/google';
 import './globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+const singleDay = Single_Day({
+  variable: '--font-single-day',
+  weight: '400',
 });
 
 export const metadata: Metadata = {
@@ -22,8 +17,8 @@ const RootLayout = ({
 }: Readonly<{
   children: React.ReactNode;
 }>) => (
-  <html lang="en">
-    <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+  <html lang="ko">
+    <body className={`${singleDay.variable} antialiased`} style={{ fontFamily: 'var(--font-single-day)' }}>
       {children}
     </body>
   </html>

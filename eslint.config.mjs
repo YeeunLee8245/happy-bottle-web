@@ -1,15 +1,56 @@
+import stylistic from '@stylistic/eslint-plugin';
 import nextVitals from 'eslint-config-next/core-web-vitals';
 import nextTs from 'eslint-config-next/typescript';
-import prettierConfig from 'eslint-config-prettier';
 import { defineConfig, globalIgnores } from 'eslint/config';
 
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
-  prettierConfig,
   {
+    plugins: {
+      '@stylistic': stylistic,
+    },
     rules: {
-      // Prettier는 별도로 실행하므로 ESLint에서 제외
+      // @stylistic 포맷팅 규칙들 (.prettierrc 설정 기반)
+      '@stylistic/semi': ['error', 'always'], // semi: true
+      '@stylistic/quotes': ['error', 'single'], // singleQuote: true
+      '@stylistic/comma-dangle': ['error', 'always-multiline'],
+      '@stylistic/max-len': [
+        'error',
+        {
+          code: 80,
+          ignoreUrls: true,
+          ignoreStrings: true,
+          ignoreTemplateLiterals: true,
+          ignoreRegExpLiterals: true,
+          ignoreComments: false,
+        },
+      ],
+      '@stylistic/indent': ['error', 2],
+      '@stylistic/object-curly-spacing': ['error', 'always'],
+      '@stylistic/jsx-closing-bracket-location': ['error', 'line-aligned'],
+      '@stylistic/arrow-parens': ['error', 'as-needed'],
+      '@stylistic/eol-last': ['error', 'always'],
+      '@stylistic/quote-props': ['error', 'as-needed'],
+
+      // 추가 스타일 규칙들
+      '@stylistic/comma-spacing': [
+        'error',
+        { before: false, after: true },
+      ],
+      '@stylistic/key-spacing': [
+        'error',
+        { beforeColon: false, afterColon: true },
+      ],
+      '@stylistic/space-before-blocks': 'error',
+      '@stylistic/space-infix-ops': 'error',
+      '@stylistic/no-trailing-spaces': 'error',
+      '@stylistic/jsx-quotes': ['error', 'prefer-double'],
+      '@stylistic/jsx-curly-spacing': ['error', 'never'],
+      '@stylistic/jsx-tag-spacing': [
+        'error',
+        { beforeSelfClosing: 'always' },
+      ],
 
       // Airbnb 스타일 규칙들
       '@typescript-eslint/no-unused-vars': 'error',

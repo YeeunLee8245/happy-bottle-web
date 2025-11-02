@@ -1,3 +1,5 @@
-export default function UnAuthLayout() {
-  return <div>UnAuthLayout</div>;
-}
+const UnAuthLayout = ({ children }: { children: React.ReactNode }) => (
+  <div>{children}</div>
+);
+
+export default UnAuthLayout;

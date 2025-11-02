@@ -19,6 +19,7 @@ const RootLayout = ({
 }>) => (
   <html lang="ko">
     <body className={`${singleDay.variable} antialiased`} style={{ fontFamily: 'var(--font-single-day)' }}>
+      <div className="text-14 text-secondary">안녕하세요!</div>
       {children}
     </body>
   </html>
